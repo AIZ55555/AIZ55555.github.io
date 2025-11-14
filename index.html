@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciallo～(∠・ω <)⌒☆</title>
+    <style type="text/css">
+        body {
+            height: 720px;
+            background-color: rgba(0,0,0,.90);
+            text-align: center;
+            color: rgba(220,220,220,.20);
+   .....     }
+        .box {
+            width: 345px;
+            height: 580px;
+            background-color: rgba(169,169,169,.10);
+            margin: 20px auto;
+            border-radius: 30px; 
+            overflow: hidden;
+             }
+        .diagonal-1 {
+            transform: rotate(-10deg);
+            transform-origin: center;
+            width: 135%;
+            height: 135%;
+            margin-left: -10%;
+            margin-top: -10%;
+                    }
+        button {
+            white-space: nowrap; 
+            min-width: 0; 
+            overflow: hidden; 
+            text-overflow: ellipsis;
+                }
+        #startButton {
+            position: absolute;
+            top: 54%;
+            left: 20%;
+            transform: translate(-18%, -50%);
+            padding: 285px 170px;
+            font-size: 25px;
+            background-color: rgba(0,0,0,.15);
+            color: black;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 10;
+                     }
+          }
+        h1 {
+            font-size: 40px;
+       }
+    </style>
+</head>
+<body>
+ <img src="IMG_20251114_155533.jpg" width="350">
+   <div class="box">
+     <div class="diagonal-1">
+        <h1>
+            Ciallo～(∠・ω <)⌒☆<br><br>Ciallo～(∠・ω <)⌒☆<br><br>Ciallo～(∠・ω <)⌒☆<br><br>Ciallo～(∠・ω <)⌒☆<br><br>Ciallo～(∠・ω <)⌒☆<br><br>Ciallo～(∠・ω <)⌒☆<br><br>Ciallo～(∠・ω <)⌒☆
+        </h1>
+     </div>
+     <button id="startButton"></button>
+    </div>
+    <script>
+        const audioFiles = [
+            "ciallo/ciallo1.mp3",
+            "ciallo/ciallo2.mp3",
+            "ciallo/ciallo3.mp3",
+            "ciallo/ciallo5.mp3",
+            "ciallo/ciallo6.mp3",
+            "ciallo/ciallo7.mp3",
+            "ciallo/ciallo8.mp3",
+            "ciallo/ciallo9.mp3",
+            "ciallo/ciallo10.mp3",
+            "ciallo/ciallo11.mp3",
+            "ciallo/ciallo12.mp3",
+            "ciallo/ciallo13.mp3",
+            "ciallo/ciallo14.mp3"
+        ];
+        
+        const startButton = document.getElementById('startButton');
+        let currentAudio = null;
+        
+        startButton.addEventListener('click', function() {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            
+            const randomIndex = Math.floor(Math.random() * audioFiles.length);
+            const audioUrl = audioFiles[randomIndex];
+            
+            currentAudio = new Audio(audioUrl);
+            currentAudio.play();
+        });
+    </script>
+</body>
+</html>
